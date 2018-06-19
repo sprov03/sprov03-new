@@ -1,0 +1,12 @@
+<div class="alert alert-dark" *ngIf="form">
+  <h3>{{form.title}}</h3>
+  <form>
+    <div class="form-group" *ngFor="let formField of form.formFields">
+      <label>{{formField.label}}
+        <input [type]="formField.type" class="form-control" [placeholder]="formField.placeholder">
+      </label>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+  </form>
+</div>

@@ -10,28 +10,28 @@
       "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
-          "inlineTemplate": true,
+          "inlineTemplate": false,
           "inlineStyle": true,
           "styleext": "scss",
-          "spec": false
+          "spec": true
         },
         "@schematics/angular:class": {
-          "spec": false
+          "spec": true
         },
         "@schematics/angular:directive": {
-          "spec": false
+          "spec": true
         },
         "@schematics/angular:guard": {
-          "spec": false
+          "spec": true
         },
         "@schematics/angular:module": {
-          "spec": false
+          "spec": true
         },
         "@schematics/angular:pipe": {
-          "spec": false
+          "spec": true
         },
         "@schematics/angular:service": {
-          "spec": false
+          "spec": true
         }
       },
       "architect": {
@@ -48,6 +48,9 @@
               "src/assets"
             ],
             "styles": [
+              {
+                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+              },
               "src/styles.scss"
             ],
             "scripts": []
@@ -97,6 +100,9 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
+              {
+                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+              },
               "src/styles.scss"
             ],
             "scripts": [],

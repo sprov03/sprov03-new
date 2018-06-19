@@ -1,0 +1,88 @@
+<div class="app-calendar">
+  <div class="row">
+    <div class="col">
+      <div class="btn-group">
+        <div
+          class="btn btn-primary"
+          (click)="view = 'month'"
+          [class.active]="view === 'month'">
+          Month
+        </div>
+        <div
+          class="btn btn-primary"
+          (click)="view = 'week'"
+          [class.active]="view === 'week'">
+          Week
+        </div>
+        <div
+          class="btn btn-primary"
+          (click)="view = 'day'"
+          [class.active]="view === 'day'">
+          Day
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <h1 class="text-center mb-0">{{month}}</h1>
+    </div>
+    <div class="col">
+      <div class="btn-group float-right">
+        <div
+          class="btn btn-primary"
+          (click)="previousMonth()">
+          Previous Month
+        </div>
+        <div
+          class="btn btn-primary"
+          (click)="currentMonth()">
+          Today
+        </div>
+        <div
+          class="btn btn-primary"
+          (click)="nextMonth()">
+          Next Month
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-calendar-heading">
+    <div>
+      <span class="d-none d-md-block">Sunday</span>
+      <span class="d-md-none">Sun</span>
+    </div>
+    <div>
+      <span class="d-none d-md-block">Monday</span>
+      <span class="d-md-none">Mon</span>
+    </div>
+    <div>
+      <span class="d-none d-md-block">Tuesday</span>
+      <span class="d-md-none">Tue</span>
+    </div>
+    <div>
+      <span class="d-none d-md-block">Wednesday</span>
+      <span class="d-md-none">Wed</span>
+    </div>
+    <div>
+      <span class="d-none d-md-block">Thursday</span>
+      <span class="d-md-none">Thur</span>
+    </div>
+    <div>
+      <span class="d-none d-md-block">Friday</span>
+      <span class="d-md-none">Fri</span>
+    </div>
+    <div>
+      <span class="d-none d-md-block">Saturday</span>
+      <span class="d-md-none">Sat</span>
+    </div>
+  </div>
+
+  <div class="app-calendar-month-body">
+    <div class="month-row" *ngFor="let week of weeks">
+      <div class="month-cell" *ngFor="let day of week.days">
+        <div class="day">{{day.date.getDate()}}</div>
+        <span *ngFor="let event of day.events">{{event.label}}</span>
+      </div>
+    </div>
+  </div>
+</div>

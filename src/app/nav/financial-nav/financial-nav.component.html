@@ -1,0 +1,10 @@
+<h1 class="alert alert-dark">Financial Section</h1>
+<div *ngIf="false">
+  <div *mobxAutorun>
+    <h2>Computed Full Name: {{fullName}}</h2>
+    <h2>Generic Getter Full Name: {{getFullName()}}</h2>
+  </div>
+  <input type="text" [(ngModel)]="firstName">
+</div>
+<router-outlet></router-outlet>
+

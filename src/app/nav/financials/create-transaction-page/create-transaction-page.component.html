@@ -1,0 +1,19 @@
+<form [formGroup]="transactionForm">
+  <mat-form-field class="w-100">
+    <input matInput placeholder="Description" formControlName="description">
+  </mat-form-field>
+  <mat-form-field class="w-100">
+      <input matInput placeholder="Amount" formControlName="amount">
+  </mat-form-field>
+  <mat-form-field class="w-100">
+    <input matInput placeholder="San Antonio" formControlName="location">
+  </mat-form-field>
+
+  <mat-form-field class="w-100">
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="transactionDate">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <button type="submit" class="btn btn-dark" (click)="submit()">Submit</button>
+</form>

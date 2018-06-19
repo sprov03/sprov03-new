@@ -1,0 +1,10 @@
+<h2>Your Todo Lists</h2>
+<div class="row">
+    <ul class="list-unstyled">
+      <li *ngFor="let todo of todos">
+        <span class="m-2 ml-3" [class.disabled]="todo.updating" (click)="toggleTodoCompleted(todo)"><i class="fa"  [class.fa-square-o]="! todo.isComplete" [class.fa-check-square-o]="todo.isComplete"></i></span>
+        <strong><a routerLink="/todos/{{todo.id}}">{{todo.title}} </a></strong>
+        <small><em>{{todo.description}}</em></small>
+      </li>
+    </ul>
+</div>

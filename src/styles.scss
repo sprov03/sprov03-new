@@ -1,1 +1,108 @@
 /* You can add global styles to this file, and also import other style files */
+$brightPrimary: #04F924;
+$mediumPrimary: #00DA78;
+$darkPrimary: #00B79C;
+$brightSecondary: #0091A1;
+$mediumSecondary: #006C87;
+$darkSecondary: #2F4858;
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.min.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+nav.nav.top-nav{
+  background-color: $brightPrimary;
+  a.nav-link {
+    span {
+      color: $darkSecondary;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+}
+
+ul.left-nav {
+  position: fixed;
+  top: 46px;
+  bottom: -15px;
+  width: 40px;
+  background-color: $darkSecondary;
+  li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+
+    a i {
+      color: #000;
+    }
+  }
+
+  li.active {
+    background: $mediumSecondary;
+
+    a i {
+      color: $darkPrimary;
+    }
+  }
+}
+
+div.page-content {
+  position: fixed;
+  top: 46px;
+  right: 0;
+  bottom: 0;
+  left: 40px;
+  overflow-y: scroll;
+  padding: 2rem;
+  background-color: #eef5f9;
+}
+
+.app-calendar {
+  .app-calendar-heading {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding: 0;
+
+    div {
+      flex: 1;
+      background: lightgray;
+      outline: black 1px solid;
+      text-align: center;
+
+      &:hover {
+        background: #04F924;
+      }
+
+      span {
+        margin-right: 5px;
+        width: 100%;
+      }
+    }
+  }
+
+  .app-calendar-month-body {
+    .month-row {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+
+      .month-cell {
+        flex: 1;
+        height: 100px;
+        display: inline-block;
+        text-align: left;
+        outline: black 1px solid;
+
+        .day {
+          width: 25px;
+          height: 25px;
+          text-align: left;
+          margin-top: -5px;
+        }
+      }
+    }
+  }
+}
